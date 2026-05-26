@@ -3,6 +3,7 @@ import pytest
 from minisweagent.agents import get_agent, get_agent_class
 from minisweagent.agents.default import DefaultAgent
 from minisweagent.agents.interactive import InteractiveAgent
+from minisweagent.agents.v2 import V2Agent
 from minisweagent.environments.local import LocalEnvironment
 from minisweagent.models.test_models import DeterministicModel
 
@@ -13,6 +14,7 @@ class TestGetAgentClass:
         [
             ("minisweagent.agents.default.DefaultAgent", DefaultAgent),
             ("minisweagent.agents.interactive.InteractiveAgent", InteractiveAgent),
+            ("minisweagent.agents.v2.V2Agent", V2Agent),
         ],
     )
     def test_full_path(self, spec, expected):
@@ -23,6 +25,7 @@ class TestGetAgentClass:
         [
             ("default", DefaultAgent),
             ("interactive", InteractiveAgent),
+            ("v2", V2Agent),
         ],
     )
     def test_shorthand(self, spec, expected):
